@@ -2,12 +2,14 @@
   "name": "alexglaze-portfolio",
   "version": "1.0.0",
   "description": "my web development portfolio",
-  "main": "Gruntfile.js",
-  "dependencies": {
-    "grunt-aws-s3": "^2.0.0",
-    "grunt": "^1.0.4"
+  "devDependencies": {
+    "grunt": "^1.0.4",
+    "grunt-aws": "^0.7.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-nodeunit": "~0.4.1",
+    "grunt-contrib-uglify": "~0.5.0"
   },
-  "devDependencies": {},
+  "dependencies": {},
   "scripts": {
     "deploy": "grunt deploy",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -1,30 +1,50 @@
 module.exports = function(grunt) {
+
+    // Load the plugin that provides the "grunt-aws" task.
+    grunt.loadNpmTasks('grunt-aws');
+
+    
     grunt.initConfig({
+
         aws: grunt.file.readJSON("aws-keys.json"),
-        aws_s3: {
+
+        s3: {
             options: {
                 accessKeyId: "<% aws.AWSAccessKeyId %>",
                 secretAccessKey: "<%= aws.AWSSecretKey %>",
-                region: "us-east-1"
+                bucket: "alexglaze.tech"
             },
-            dist: {
-                options: {
-                    bucket: "alexglaze.tech",
-                    differential: true
-                },
-                files: [
-                    {
-                        expand: true,
-                        cwd: "build",
-                        src: ["**"],
-                        dest: ""
-                    }
-                ]
+            build: {
+                cwd: "build",
+                src: "**"
             }
-        }
+        },
+
+        // cloudfront: {
+        //     options: {
+        //       accessKeyId: "<% aws.AWSAccessKeyId %>",
+        //       secretAccessKey: "<%= aws.AWSSecretKey %>",
+        //       distributionId: "...",
+        //       invalidations: [
+        //         "/index.html"
+        //       ]
+        //     },
+        //     invalidate: {}
+        //   },
+      
+        //   sns: {
+        //     options: {
+        //       accessKeyId: "<% aws.AWSAccessKeyId %>",
+        //       secretAccessKey: "<%= aws.AWSSecretKey %>",
+        //       region: "...",
+        //       target: "...",
+        //       message: "...",
+        //       subject: "..."
+        //     }
+        //   }
     });
 
-    grunt.loadNpmTasks("grunt-aws-s3");
+     
 
-    grunt.registerTask("deploy", "aws_s3");
+   grunt.registerTask("deploy", "s3");
 };
