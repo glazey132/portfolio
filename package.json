@@ -1,0 +1,30 @@
+{
+  "name": "alexglaze-portfolio",
+  "version": "1.0.0",
+  "description": "my web development portfolio",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt-aws-s3": "^2.0.0",
+    "grunt": "^1.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "deploy": "grunt deploy",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/glazey132/portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "dev",
+    "webdevelopment"
+  ],
+  "author": "Alex Glaze",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/glazey132/portfolio/issues"
+  },
+  "homepage": "https://github.com/glazey132/portfolio#readme"
+}
