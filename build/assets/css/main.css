@@ -639,6 +639,11 @@ input, select, textarea {
 		text-align: left;
 	}
 
+/* Resume */
+.resume {
+	text-align: center;
+}
+
 /* Container */
 
 	.container {
